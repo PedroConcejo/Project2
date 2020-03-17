@@ -3,26 +3,28 @@ const mongoose = require('mongoose')
 const eventsSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: true
   },
   club: {
-    type: mongoose.Schema.Types.ObjectId, 
-    ref: 'clubs' 
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'clubs'
   },
-  style: {
-    type: String,
+  musicStyle: {
+    type: String
   },
-  day: {
+  date: {
     type: Date,
+    required: true
   },
   minAge: {
-    type: Number,
+    type: Number
   },
   phone: {
-    type: Number,
+    type: String
   },
-  photo: {
-    type: String,
-  },
+  photoUrl: {
+    type: String
+  }
 })
 
 const eventsModel = mongoose.model('events', eventsSchema)

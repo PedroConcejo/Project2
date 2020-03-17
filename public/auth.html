@@ -4,26 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Reboot API Front</title>
+  <title>FireFly Home</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/auth.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">REBOOT TEMPLATE</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-      </ul>
-      <span class="navbar-text">
-        Hi fer@fer.com!
-        <a class="btn btn-primary" id="logout">LOGOUT</a>
-      </span>
-    </div>
-  </nav>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-warning m-auto" href="#">FIREFLY</a>
+   </nav>
 
   <div class="container">
     <div class="row">
@@ -31,26 +20,25 @@
 
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true">LOGIN</a>
-            <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signup" aria-selected="false">SIGNUP</a>
+            <a class="nav-item nav-link navbar-dark bg-dark text-warning active" id="nav-user-tab" data-toggle="tab" href="#nav-user" role="tab" aria-controls="nav-user" aria-selected="true">USER</a>
+            <a class="nav-item nav-link navbar-dark bg-dark text-warning" id="nav-local-tab" data-toggle="tab" href="#nav-local" role="tab" aria-controls="nav-local" aria-selected="false">LOCAL</a>
+            <a class="nav-item nav-link navbar-dark bg-dark text-warning" id="nav-djs-tab" data-toggle="tab" href="#nav-djs" role="tab" aria-controls="nav-djs" aria-selected="false">DJs</a>
           </div>
         </nav>
 
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-            <div id="login">
+          <div class="tab-pane fade show active" id="nav-user" role="tabpanel" aria-labelledby="nav-user-tab">
+            <div id="userlog">
                 <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="login_email" class="form-control" placeholder="Email address" required="" autofocus="">
+                <input type="email" id="user_email" class="form-control" placeholder="Email address" required="" autofocus="">
 
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="login_password" class="form-control" placeholder="Password" required="">
+                <input type="password" id="user_password" class="form-control" placeholder="Password" required="">
 
-                <button class="btn btn-lg btn-primary btn-block" id="btn-login">Sign in</button>
+                <button class="btn btn-lg btn-dark btn-block text-warning" id="btn-user">Login</button>
             </div>
-          </div>
-
-          <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
-            <form class="form-signin">
+            <hr style="color: black;" width="75%" />
+            <div id="usersing">
               <label for="inputEmail" class="sr-only">User Name</label>
               <input type="text" id="user_name" class="form-control" placeholder="User Name" required="" autofocus="">
 
@@ -60,8 +48,59 @@
               <label for="inputPassword" class="sr-only">Password</label>
               <input type="password" id="user_password" class="form-control" placeholder="Password" required="">
 
-              <button class="btn btn-lg btn-primary btn-block" id="btn-signup">Sign in</button>
-            </form>
+              <button class="btn btn-lg btn-dark btn-block text-warning" id="btn-user">Signin</button>
+          </div>
+          </div>
+
+          <div class="tab-pane fade" id="nav-local" role="tabpanel" aria-labelledby="nav-local-tab">
+            
+            <div id="locallog">
+              <label for="inputEmail" class="sr-only">Email address</label>
+              <input type="email" id="local_email" class="form-control" placeholder="Email address" required="" autofocus="">
+
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="local_password" class="form-control" placeholder="Password" required="">
+
+              <button class="btn btn-lg btn-dark btn-block text-warning" id="btn-local">Login</button>
+          </div>
+          <hr style="color: black;" width="75%" />
+          <div id="localsign">
+            <label for="inputEmail" class="sr-only">Local Name</label>
+            <input type="text" id="local_name" class="form-control" placeholder="Local Name" required="" autofocus="">
+
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="local_email" class="form-control" placeholder="Email address" required="" autofocus="">
+
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="local_password" class="form-control" placeholder="Password" required="">
+
+            <button class="btn btn-lg btn-dark btn-block text-warning" id="btn-local">Signin</button>
+        </div>
+        </div>
+
+          <div class="tab-pane fade" id="nav-djs" role="tabpanel" aria-labelledby="nav-djs-tab">
+            <div id="djs">
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="djs_email" class="form-control" placeholder="Email address" required="" autofocus="">
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="djs_password" class="form-control" placeholder="Password" required="">
+
+                <button class="btn btn-lg btn-dark btn-block text-warning" id="btn-djs">Login</button>
+            </div>
+            <hr style="color: black;" width="75%" />
+            <div id="djs">
+              <label for="inputEmail" class="sr-only">DJ Name</label>
+              <input type="text" id="djs_name" class="form-control" placeholder="DJ Name" required="" autofocus="">
+
+              <label for="inputEmail" class="sr-only">Email address</label>
+              <input type="email" id="djs_email" class="form-control" placeholder="Email address" required="" autofocus="">
+
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="djs_password" class="form-control" placeholder="Password" required="">
+
+              <button class="btn btn-lg btn-dark btn-block text-warning" id="btn-djs">Signin</button>
+          </div>
           </div>
         </div>
 

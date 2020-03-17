@@ -3,27 +3,30 @@ const mongoose = require('mongoose')
 const clubsSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: true
   },
   address: {
     type: String,
+    required: true
   },
-  schelude: {
-    type: String,
+  schedule: {
+    type: String
   },
   capacity: {
-    type: Number,
+    type: Number
   },
   minAge: {
-    type: Number,
+    type: Number
   },
   phone: {
-    type: Number,
-  },
-  webpage: {
     type: String,
+    required: true
   },
-  photo: {
-    type: String,
+  website: {
+    type: String
+  },
+  photoUrl: {
+    type: String
   }
 })
 

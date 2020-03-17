@@ -2,23 +2,13 @@ const EventsModel = require('../models/events.model')
 const { handleError } = require('../utils')
 
 module.exports = {
-  getAllEvents,
-  getEvent,
-  }
-
-
-function getAllEvents (req, res) {
-  res.json("All Events")
-    /*ClubsModel
-    .find({ user: res.locals.user._id })
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))*/
+  getAllEvents
 }
 
-function getEvent (req, res) {
-  res.json("One Event")
-  /*ClubsModel
-  .find({ user: res.locals.user._id })
-  .then(response => res.json(response))
-  .catch((err) => handleError(err, res))*/
+function getAllEvents (req, res) {
+  res.json('All Events')
+  /* ClubsModel
+    .find({ user: res.locals.user._id })
+    .then(response => res.json(response))
+    .catch((err) => handleError(err, res)) */
 }

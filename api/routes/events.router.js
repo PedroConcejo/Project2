@@ -2,12 +2,9 @@ const router = require('express').Router()
 const { authUser } = require('../utils') // Authenticated Route
 
 const {
-  getAllEvents,
-  getEvent,
+  getAllEvents
 } = require('../controllers/events.controller')
 
-router.get('/', getAllEvents)
-router.get('/:eventId', getEvent)
-
+router.get('/events', getAllEvents)
 
 module.exports = router

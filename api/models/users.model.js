@@ -3,11 +3,10 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-   
+    required: true
   },
   email: {
     type: String,
-  
     validate: {
       validator (value) {
         return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)
@@ -18,7 +17,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    
+    required: true
   },
   gender: {
     type: String,
@@ -27,17 +26,17 @@ const userSchema = new mongoose.Schema({
     default: 'male'
   },
   birthDate: {
-    type: Date,
+    type: Date
   },
   phone: {
-    type: Number,
+    type: String
   },
-  photo: {
-    type: String,
+  photoUrl: {
+    type: String
   },
   eventsFav: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'events' 
+    ref: 'events'
   },
   clubsFav: {
     type: mongoose.Schema.Types.ObjectId,
