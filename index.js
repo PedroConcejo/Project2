@@ -6,7 +6,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
-const path = require('path')
+const path = require('path') 
 
 // NONGOOSE
 mongoose.connect(process.env.MONGO_URL,
