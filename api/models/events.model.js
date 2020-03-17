@@ -1,17 +1,18 @@
 const mongoose = require('mongoose')
 
-const clubsSchema = new mongoose.Schema({
+const eventsSchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  address: {
+  club: {
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'clubs' 
+  },
+  style: {
     type: String,
   },
-  schelude: {
-    type: String,
-  },
-  capacity: {
-    type: Number,
+  day: {
+    type: Date,
   },
   minAge: {
     type: Number,
@@ -19,24 +20,10 @@ const clubsSchema = new mongoose.Schema({
   phone: {
     type: Number,
   },
-  webpage: {
-    type: String,
-  },
   photo: {
     type: String,
-  }
+  },
 })
 
-const clubsModel = mongoose.model('clubs', clubsSchema)
-module.exports = clubsModel
-
-/*events{
-  name: string,
-  clubs:string,
-  style: string,
-  dia de evento:date,
-  min-age: number,
-  phone: number,
-  photo: string,
-  club: {mongoose.Schema.Types.ObjectId, ref:'clubs'}
-  }*/
+const eventsModel = mongoose.model('events', eventsSchema)
+module.exports = eventsModel
