@@ -1,4 +1,5 @@
 const ClubsModel = require('../models/clubs.model')
+const EventsModel = require('../models/events.model')
 const { handleError } = require('../utils')
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
 
 function getAllClubs (req, res) {
   ClubsModel
-    .find({ user: res.locals.user._id })
+    .find()
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
@@ -27,35 +28,35 @@ function createClub (req, res) {
 
 function getClub (req, res) {
   ClubsModel
-    .find({ user: res.locals.user._id })
+    .findById(req.params.clubId)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function deleteClub (req, res) {
   ClubsModel
-    .find({ user: res.locals.user._id })
+    .findByIdAndDelete(req.params.clubId)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function getClubEvent (req, res) {
-  ClubsModel
-    .find({ user: res.locals.user._id })
+  EventsModel
+    .find()
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function createClubEvent (req, res) {
-  ClubsModel
-    .find({ user: res.locals.user._id })
+  EventsModel
+    .create({ ...req.body, club: req.params.clubId })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function deleteClubEvent (req, res) {
-  ClubsModel
-    .find({ user: res.locals.user._id })
+  EventsModel
+    .findByIdAndDelete(req.params.eventId)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
