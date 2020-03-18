@@ -44,7 +44,7 @@ function login (req, res) {
         if (err) { handleError(err) }
         if (!result) { return res.json({ error: `wrong password for ${req.body.user_email}` }) }
 
-        const userData = { username: user.name, email: user.email }
+        const userData = { email: user.email }
 
         const token = jwt.sign(
           userData,

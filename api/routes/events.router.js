@@ -5,6 +5,6 @@ const {
   getAllEvents
 } = require('../controllers/events.controller')
 
-router.get('/events', getAllEvents)
+router.get('/', getAllEvents)
 
 module.exports = router

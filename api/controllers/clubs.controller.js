@@ -12,7 +12,6 @@ module.exports = {
 }
 
 function getAllClubs (req, res) {
-  res.json('All Clubs')
   ClubsModel
     .find({ user: res.locals.user._id })
     .then(response => res.json(response))
@@ -20,7 +19,6 @@ function getAllClubs (req, res) {
 }
 
 function createClub (req, res) {
-  res.json('One Club')
   ClubsModel
     .find({ user: res.locals.user._id })
     .then(response => res.json(response))
@@ -28,7 +26,6 @@ function createClub (req, res) {
 }
 
 function getClub (req, res) {
-  res.json('All Clubs')
   ClubsModel
     .find({ user: res.locals.user._id })
     .then(response => res.json(response))
@@ -36,7 +33,6 @@ function getClub (req, res) {
 }
 
 function deleteClub (req, res) {
-  res.json('One Club')
   ClubsModel
     .find({ user: res.locals.user._id })
     .then(response => res.json(response))
@@ -44,7 +40,6 @@ function deleteClub (req, res) {
 }
 
 function getClubEvent (req, res) {
-  res.json('All Clubs')
   ClubsModel
     .find({ user: res.locals.user._id })
     .then(response => res.json(response))
@@ -52,7 +47,6 @@ function getClubEvent (req, res) {
 }
 
 function createClubEvent (req, res) {
-  res.json('One Club')
   ClubsModel
     .find({ user: res.locals.user._id })
     .then(response => res.json(response))
@@ -60,7 +54,6 @@ function createClubEvent (req, res) {
 }
 
 function deleteClubEvent (req, res) {
-  res.json('One Club')
   ClubsModel
     .find({ user: res.locals.user._id })
     .then(response => res.json(response))

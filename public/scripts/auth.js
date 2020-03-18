@@ -21,7 +21,7 @@ document.getElementById('btn-signup').addEventListener('click', (event) => {
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('name', response.data.username)
       localStorage.setItem('email', response.data.email)
-      location.assign('todos.html')
+      location.assign('clubs.html')
     })
     .catch(function (error) {
       console.log(error.response)
@@ -41,9 +41,8 @@ document.getElementById('btn-login').addEventListener('click', (event) => {
         alert('WRONG PASSWORD')
       } else {
         localStorage.setItem('token', response.data.token)
-        localStorage.setItem('name', response.data.username)
         localStorage.setItem('email', response.data.email)
-        location.assign('todos.html')
+        location.assign('clubs.html')
       }
     })
     .catch(function (error) {
