@@ -9,28 +9,19 @@ module.exports = {
 }
 
 function signup (req, res) {
-  const hashedPwd = bcrypt.hashSync(req.body.user_password, 10)
-  const userBody = {
-    name: req.body.user_name,
-    email: req.body.user_email,
-    gender: req.body.user_gender,
-    birthday: req.body.user_birthday,
-    phone: req.body.user_phone,
-    password: hashedPwd
-  }
-
   UserModel
-    .create(userBody)
+    .create({
+      ...req.body,
+      password: bcrypt.hashSync(req.body.password || '', 10)
+    })
     .then(() => {
-      const userData = { username: req.body.user_name, email: req.body.user_email }
-
       const token = jwt.sign(
-        userData,
+        { email: req.body.email },
         process.env.SECRET, // TAKE SECRET KEY FROM .ENV
         { expiresIn: '1w' }
       )
 
-      return res.json({ token: token, ...userData })
+      return res.json({ token: token, email: req.body.email })
     })
     .catch((err) => {
       res.status(403).json({ error: err })
@@ -39,23 +30,21 @@ function signup (req, res) {
 
 function login (req, res) {
   UserModel
-    .findOne({ email: req.body.user_email })
+    .findOne({ email: req.body.email })
     .then(user => {
       if (!user) { return res.json({ error: 'wrong email' }) }
 
-      bcrypt.compare(req.body.user_password, user.password, (err, result) => {
+      bcrypt.compare(req.body.password, user.password, (err, result) => {
         if (err) { handleError(err) }
-        if (!result) { return res.json({ error: `wrong password for ${req.body.user_email}` }) }
-
-        const userData = { email: user.email }
+        if (!result) { return res.json({ error: `wrong password for ${req.body.email}` }) }
 
         const token = jwt.sign(
-          userData,
+          { email: user.email },
           process.env.SECRET,
           { expiresIn: '1h' }
         )
 
-        return res.json({ token: token, ...userData })
+        return res.json({ token: token, email: user.email })
       })
     })
     .catch(err => handleError(err, res))
