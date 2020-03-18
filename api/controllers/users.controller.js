@@ -2,28 +2,29 @@ const UserModel = require('../models/users.model')
 const { handleError } = require('../utils')
 
 module.exports = {
-  getUser,
-  updateUser,
-  deleteUserById,
-  getFavClubs,
-  addFavClub,
-  deleteFavClub,
-  getFavEvents,
-  getFavEvent,
-  addFavEvent,
-  deleteFavEvent
+  getAllUsers,
+  getUserById,
+  updateUserById,
+  deleteUserById
 }
 
-function getUser (req, res) {
+function getAllUsers (req, res) {
   UserModel
     .find()
+    .then(users => res.json(users))
+    .catch((err) => handleError(err, res))
+}
+
+function getUserById (req, res) {
+  UserModel
+    .findById(req.params.userId)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
-function updateUser (req, res) {
+function updateUserById (req, res) {
   UserModel
-    .findByIdAndUpdate(res.locals.user._id, req.body, {
+    .findByIdAndUpdate(req.params.userId, req.body, {
       new: true,
       runValidators: true
     })
@@ -33,59 +34,7 @@ function updateUser (req, res) {
 
 function deleteUserById (req, res) {
   UserModel
-    .findByIdAndDelete(res.locals.user._id)
+    .findByIdAndDelete(req.params.userId)
     .then(response => res.json(response))
     .catch(err => handleError(err, res))
-}
-
-function getFavClubs (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
-}
-
-function addFavClub (req, res) {
-  UserModel
-    .findByIdAndUpdate(res.locals.user._id, req.body, {
-      new: true,
-      runValidators: true
-    })
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
-}
-
-function deleteFavClub (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
-}
-
-function getFavEvents (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
-}
-
-function getFavEvent (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
-}
-
-function addFavEvent (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
-}
-
-function deleteFavEvent (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
 }

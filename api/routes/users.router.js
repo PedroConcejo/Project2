@@ -1,27 +1,15 @@
 const router = require('express').Router()
 
 const {
-  getUser,
-  updateUser,
-  deleteUserById,
-  getFavClubs,
-  addFavClub,
-  deleteFavClub,
-  getFavEvent,
-  addFavEvent,
-  deleteFavEvent
+  getAllUsers,
+  getUserById,
+  updateUserById,
+  deleteUserById
 } = require('../controllers/users.controller')
 
-router.get('/', getUser)
-router.put('/', updateUser)
-router.delete('/', deleteUserById)
-
-router.get('/clubs', getFavClubs)
-router.post('/clubs', addFavClub)
-router.delete('/clubs', deleteFavClub)
-
-router.get('/events', getFavEvent)
-router.post('/events', addFavEvent)
-router.delete('/events/', deleteFavEvent)
+router.get('/', getAllUsers)
+router.get('/:userId', getUserById)
+router.put('/:userId', updateUserById)
+router.delete('/:userId', deleteUserById)
 
 module.exports = router
