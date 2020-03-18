@@ -13,6 +13,9 @@ function signup (req, res) {
   const userBody = {
     name: req.body.user_name,
     email: req.body.user_email,
+    gender: req.body.user_gender,
+    birthday: req.body.user_birthday,
+    phone: req.body.user_phone,
     password: hashedPwd
   }
 

@@ -32,15 +32,18 @@ const userSchema = new mongoose.Schema({
     type: String
   },
   photoUrl: {
-    type: String
+    type: String,
+    required: false
   },
   eventsFav: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'events'
+    ref: 'events',
+    required: false
   }],
   clubsFav: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'clubs'
+    ref: 'clubs',
+    required: false
   }]
 })
 
