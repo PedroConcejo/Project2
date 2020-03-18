@@ -62,4 +62,61 @@ Available on:
 Hit CTRL-C to stop the server
 ```
 
+# RUTAS
+
+### AUTH
+
+METHOD | URL                        | What does it do
+-------|----------------------------|---------------------------------
+POST   | `api/auth/signup`          | Create an account
+POST   | `api/auth/login`           | Login User & Return Token
+
+### USER PROFILE (auth)
+METHOD | URL         | What does it do
+-------|-------------|---------------------------------
+GET    | `api/me`    | Get user details
+PUT    | `api/me`    | Update user details
+DELETE | `api/me`    | Delete User
+
+
+### USER CLUB FAVOURITES (auth)
+
+METHOD | URL                    | What does it do
+-------|------------------------|---------------------------------
+GET    | `api/me/clubs`         | Get user's favourite clubs
+PUT    | `api/me/clubs/:clubId` | Add club to favourite
+DELETE | `api/me/clubs/:clubId` | Delete club from favourite
+
+
+### USER EVENTS FAVOURITES (auth)
+METHOD | URL                      | What does it do
+-------|--------------------------|---------------------------------
+GET    | `api/me/events`          | Get user's favourite events
+PUT    | `api/me/events/:eventId` | Add event to favourite
+DELETE | `api/me/events/:eventId` | Delete event from favourite
+
+
+### CLUBS
+METHOD | URL                 | What does it do
+-------|---------------------|---------------------------------
+GET    | `api/clubs`         | Get all clubs
+POST   | `api/clubs`         | Create club
+GET    | `api/clubs/:clubId` | Get one club info
+DELETE | `api/clubs/:clubId` | Delete club
+
+### EVENTS
+METHOD | URL                 | What does it do
+-------|---------------------|---------------------------------
+GET    | `api/events`        | Get all events
+
+### EVENTS FROM CLUB
+
+METHOD | URL                 | What does it do
+-------|---------------------|---------------------------------
+GET    | `api/clubs/:clubId/events` | Get one club events
+POST   | `api/clubs/:clubId/events` | Create Club Event
+PUT    | `api/clubs/:clubId/events/:eventId` | Update Club Event
+DELETE | `api/clubs/:clubId/events/:eventId` | Delete Club Event
+
+
 Happy coding!

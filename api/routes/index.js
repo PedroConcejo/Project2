@@ -1,13 +1,13 @@
 const router = require('express').Router()
 
-const usersRouter = require('./users.router')
 const authRouter = require('./auth.router')
+const usersRouter = require('./users.router')
 const clubsRouter = require('./clubs.router')
 const eventsRouter = require('./events.router')
 const { authUser } = require('../utils') // Authenticated Route
 
-router.use('/users', usersRouter)
 router.use('/auth', authRouter)
+router.use('/me', authUser, usersRouter)
 router.use('/clubs', clubsRouter)
 router.use('/events', eventsRouter)
 

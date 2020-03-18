@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
     <img src="img/fireflyxs.png" class="rounded mx-auto d-block" alt="...">
     <div class="row">
       <div class="col-6 offset-3 mt-5">
@@ -22,17 +22,19 @@
 
           <label for="inputusername">Username</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control"id="user_name">
+            <input type="email" class="form-control" id="user_name">
           </div>
 
           <label for="inputemail">Email</label>
           <div class="col-sm-10">
             <input type="email" class="form-control" id="user_email">
           </div>
+
           <label for="inputPassword">Password</label>
           <div class="col-sm-10">
             <input type="password" class="form-control" id="user_password">
           </div>
+
           <label for="inputgender">Gender</label>
           <div class="col-sm-10">
             <select class="custom-select" id="user_gender">
@@ -40,17 +42,19 @@
               <option value="1">Female</option>
             </select>
           </div>
+
           <label for="inputbirthday">Birthday</label>
           <div class="col-sm-10">
             <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="" id="user_birthday">
           </div>
+
           <label for="inputphone">Phone Number</label>
           <div class="col-sm-10">
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" id="user_phone">
-
+            <input type="tel" name="phone" pattern="[0-9]{9}" id="user_phone">
           </div>
+
           <div class="p-5 row justify-content-around">
-            <button type="submit" class="btn btn-success" id="btn-signup">SIGNUP</button>
+            <a class="btn btn-success" id="btn-signup">SIGNUP</a>
             <a class="btn btn-light" href="login.html">Or Login</a>
           </div>
         </form>
@@ -71,7 +75,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <script src="scripts/index.js"></script>
-  <script src="scripts/singup.js"></script>
+  <script src="scripts/signup.js"></script>
 </body>
 
 </html>

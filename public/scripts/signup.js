@@ -8,7 +8,10 @@ document.getElementById('btn-signup').addEventListener('click', (event) => {
   const newUser = {
     user_name: document.getElementById('user_name').value,
     user_email: document.getElementById('user_email').value,
-    user_password: document.getElementById('user_password').value
+    user_password: document.getElementById('user_password').value,
+    user_gender: document.getElementById('user_gender').value,
+    user_birthday: document.getElementById('user_birthday').value,
+    user_phone: document.getElementById('user_phone').value
   }
 
   api
