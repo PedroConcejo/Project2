@@ -6,8 +6,8 @@ module.exports = {
 }
 
 function getAllEvents (req, res) {
-  ClubsModel
-    .find({ user: res.locals.user._id })
+  EventsModel
+    .find()
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }

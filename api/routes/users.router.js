@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { authUser } = require('../utils')
 
 const {
   getUser,
@@ -10,7 +11,6 @@ const {
   getFavEvent,
   addFavEvent,
   deleteFavEvent
-
 } = require('../controllers/users.controller')
 
 router.get('/', getUser)
