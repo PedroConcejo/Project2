@@ -6,7 +6,6 @@ module.exports = {
   updateUser,
   deleteUserById,
   getFavClubs,
-  getFavClub,
   addFavClub,
   deleteFavClub,
   getFavEvents,
@@ -24,7 +23,7 @@ function getUser (req, res) {
 
 function updateUser (req, res) {
   UserModel
-    .findByIdAndUpdate(req.params.id, req.body, {
+    .findByIdAndUpdate(res.locals.user._id, req.body, {
       new: true,
       runValidators: true
     })
@@ -34,7 +33,7 @@ function updateUser (req, res) {
 
 function deleteUserById (req, res) {
   UserModel
-    .remove({ _id: req.params.id })
+    .findByIdAndDelete(res.locals.user._id)
     .then(response => res.json(response))
     .catch(err => handleError(err, res))
 }
@@ -46,16 +45,12 @@ function getFavClubs (req, res) {
     .catch((err) => handleError(err, res))
 }
 
-function getFavClub (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
-}
-
 function addFavClub (req, res) {
   UserModel
-    .find()
+    .findByIdAndUpdate(res.locals.user._id, req.body, {
+      new: true,
+      runValidators: true
+    })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
