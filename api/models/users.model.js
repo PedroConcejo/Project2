@@ -34,14 +34,14 @@ const userSchema = new mongoose.Schema({
   photoUrl: {
     type: String
   },
-  eventsFav: {
+  eventsFav: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'events'
-  },
-  clubsFav: {
+  }],
+  clubsFav: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'clubs'
-  }
+  }]
 })
 
 const userModel = mongoose.model('user', userSchema)
