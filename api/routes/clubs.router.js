@@ -12,7 +12,7 @@ const {
 } = require('../controllers/clubs.controller')
 
 router.get('/', getAllClubs)
-router.post('/', createClub)
+router.post('/', authUser, createClub)
 router.get('/:clubId', getClub)
 router.delete('/:clubId', deleteClub)
 router.get('/:clubId/events', getClubEvent)

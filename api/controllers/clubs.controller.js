@@ -20,7 +20,7 @@ function getAllClubs (req, res) {
 
 function createClub (req, res) {
   ClubsModel
-    .find({ user: res.locals.user._id })
+    .create({ ...req.body, owner: res.locals.user._id })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }

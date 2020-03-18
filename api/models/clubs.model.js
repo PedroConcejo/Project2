@@ -27,6 +27,10 @@ const clubsSchema = new mongoose.Schema({
   },
   photoUrl: {
     type: String
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users'
   }
 })
 
