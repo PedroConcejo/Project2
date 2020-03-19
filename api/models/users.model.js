@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
     enum: ['male', 'female'],
     default: 'male'
   },
-  birthDate: {
+  birthday: {
     type: Date
   },
   phone: {

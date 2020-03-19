@@ -13,18 +13,21 @@ function signup (req, res) {
     .create({
       ...req.body,
       password: bcrypt.hashSync(req.body.password || '', 10)
-    })
-    .then(() => {
+    },
+    function (err, doc) {
+      console.log(err)
+      if (err) { res.status(403).json({ error: err.errors }) }
       const token = jwt.sign(
         { email: req.body.email },
         process.env.SECRET, // TAKE SECRET KEY FROM .ENV
         { expiresIn: '1w' }
       )
 
-      return res.json({ token: token, email: req.body.email })
-    })
-    .catch((err) => {
-      res.status(403).json({ error: err })
+      return res.json({
+        token: token,
+        email: req.body.email,
+        name: req.body.name
+      })
     })
 }
 
