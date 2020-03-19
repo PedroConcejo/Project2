@@ -84,7 +84,7 @@ DELETE | `api/me`    | Delete User
 METHOD | URL                    | What does it do
 -------|------------------------|---------------------------------
 GET    | `api/me/clubs`         | Get user's favourite clubs
-PUT    | `api/me/clubs/:clubId` | Add club to favourite
+POST   | `api/me/clubs/:clubId` | Add club to favourite
 DELETE | `api/me/clubs/:clubId` | Delete club from favourite
 
 
