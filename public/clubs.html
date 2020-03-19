@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,127 +12,152 @@
 </head>
 
 <body>
+  <div class="container-fluid px-0 mx-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Cinque Terre"></a>
 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <nav class="navbar navbar-dark bg-dark row">
-    <div class="col">
-  <a class="navbar-brand text-warning" href="#"><img src="img/logop3.png" class="rounded" alt="Cinque Terre"></a>
-  <a class="navbar-brand text-warning" href="#"><img src="img/firetitulo.png" class="rounded" alt="Cinque Terre"></a>
-  </div>
-  <div class="col align-self-center">
-    <a class="navbar-brand text-warning" href="#">Clubs</a>
-    <a class="navbar-brand text-warning" href="#">Events</a>
-  </div>
-  <div>
-    <a class="navbar-brand text-warning" href="#"><img src="img/fav.png" alt="...">Fav</a>
-    <a class="navbar-brand text-warning" href="#"><img src="img/mail.png" alt="...">Mail</a>
-    <a class="navbar-brand text-warning" href="#">Profile</a>
-    <a class="navbar-brand text-warning" href="#"><img src="img/logout.png" alt="...">Logout</a>
-  </div>
-  </nav>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-warning" href="#">Clubs <span class="sr-only">(current)</span></a>
+          </li>
 
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="#">Events <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="#">
+              <i class="far fa-heart"></i>
+              Fav <span class="sr-only">(current)</span></a>
+          </li>
 
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="#">Profile<span class="sr-only">(current)</span></a>
+          </li>
 
-  <nav class="navbar navbar-secondary bg-secondary">
-    <span class="navbar-brand mb-0 h1">Clubs</span>
-  </nav>
+          <li class="nav-item active">
+            <a class="nav-link text-warning" href="#">
+              Logout<span class="sr-only">(current)</span>
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <div class="ml-4 row">
-    <div class="col-2">
-      <p class="h2 mt-4">Filter By</p>
-      <ul class="list-group col-12 mt-3">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Open Air
-          <div class="form-check">
-            <input class="form-check-input position-static" type="checkbox" value="option1"
-              aria-label="...">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Clubs</li>
+      </ol>
+    </nav>
+
+    <div class="row" id="content">
+      <div class="col-3" id="filtersList">
+        <p class="h2 mt-4">Filter By</p>
+        <ul class="list-group col-12 mt-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Open Air
+            <div class="form-check">
+              <input class="form-check-input position-static" type="checkbox" value="option1"
+                aria-label="...">
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Smoking Area
+            <div class="form-check">
+              <input class="form-check-input position-static" type="checkbox" value="option1"
+                aria-label="...">
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Chill Out
+            <div class="form-check">
+              <input class="form-check-input position-static" type="checkbox" value="option1"
+                aria-label="...">
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-9" id="clubList">
+        <div class="row">
+          <div class="card col-3 m-1">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sotavento</h5>
+              <p class="card-text collapse" id="collapseContent">Lugar favorito de Edu al aire libre donde conocer chicos para sentirse como en el cuartel.</p>
+                <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Saber mas</a>
+                <a href="#" id="mb" class="boton" onclick = "changeColor(this);"><img src="img/fav.png" alt="..."></a>
+                <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
+                <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+            </div>
           </div>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Smoking Area
-          <div class="form-check">
-            <input class="form-check-input position-static" type="checkbox" value="option1"
-              aria-label="...">
+          <div class="card col-3 m-1">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sotavento</h5>
+              <p class="card-text collapse" id="collapseContent1">Lugar favorito de Edu al aire libre donde conocer chicos para sentirse como en el cuartel.</p>
+                <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent1" aria-expanded="false" aria-controls="collapseContent1">Saber mas</a>
+                <a href="#" id="mb1" class="boton" onclick = "changeColor(this);"><img src="img/fav.png" alt="..."></a>
+                <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
+                <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+            </div>
           </div>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Chill Out
-          <div class="form-check">
-            <input class="form-check-input position-static" type="checkbox" value="option1"
-              aria-label="...">
+          <div class="card col-3 m-1">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="card col-3 mr-2">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Sotavento</h5>
-        <p class="card-text collapse" id="collapseContent">Lugar favorito de Edu al aire libre donde conocer chicos para sentirse como en el cuartel.</p>
-          <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Saber mas</a>
-          <a href="#" id="mb" class="boton" onclick = "changeColor(this);"><img src="img/fav.png" alt="..."></a>
-          <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
-          <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+          <div class="card col-3 m-1">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card col-3 m-1">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card col-3 m-1">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card col-3 m-1">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card col-3 mr-2">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Sotavento</h5>
-        <p class="card-text collapse" id="collapseContent1">Lugar favorito de Edu al aire libre donde conocer chicos para sentirse como en el cuartel.</p>
-          <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent1" aria-expanded="false" aria-controls="collapseContent1">Saber mas</a>
-          <a href="#" id="mb1" class="boton" onclick = "changeColor(this);"><img src="img/fav.png" alt="..."></a>
-          <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
-          <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
-      </div>
-    </div>
-    <div class="card col-3">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
   </div>
-
-  <div class="ml-4 mt-3 row">
-    <div class="col-2">
-    </div>
-
-    <div class="card col-3 mr-2">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col-3 mr-2">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col-3">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-  </div>
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -144,11 +168,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8e1f0c83fb.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+
   <script src="scripts/index.js"></script>
   <script src="scripts/auth.js"></script>
   <script src="scripts/clubs.js"></script>
-
 </body>
-
 </html>

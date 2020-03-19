@@ -1,5 +1,4 @@
 body {
-    height: 100px;
-    background-color: red;
-    background-image: linear-gradient(-90deg, red, yellow);
-  }
+  background-color: red;
+  background-image: linear-gradient(-90deg, red, yellow);
+}
