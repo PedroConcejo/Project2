@@ -42,22 +42,28 @@ function getFavClubs (req, res) {
   UserModel
     .find(res.locals.user._id)
     .populate('clubsFav')
-    .then(response => res.json(response))
+    .then(response => res.json({ clubsFav: response[0].clubsFav }))
     .catch((err) => handleError(err, res))
 }
 
 function addFavClubById (req, res) {
   UserModel
     .findByIdAndUpdate(res.locals.user._id,
-      { $push: { clubsFav: req.params.clubId } }
+      { $push: { clubsFav: req.params.clubId } },
+      { new: true }
     )
+    .populate('clubsFav')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function deleteFavClubById (req, res) {
   UserModel
-    .find()
+    .findByIdAndUpdate(res.locals.user._id,
+      { $pull: { clubsFav: req.params.clubId } },
+      { new: true }
+    )
+    .populate('clubsFav')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
@@ -69,21 +75,30 @@ function deleteFavClubById (req, res) {
 // user.eventsFav
 function getFavEvents (req, res) {
   UserModel
-    .find()
-    .then(response => res.json(response))
+    .find(res.locals.user._id)
+    .populate('eventsFav')
+    .then(response => res.json({ eventsFav: response[0].eventsFav }))
     .catch((err) => handleError(err, res))
 }
 
 function addFavEvent (req, res) {
   UserModel
-    .find()
+    .findByIdAndUpdate(res.locals.user._id,
+      { $push: { eventsFav: req.params.eventId } },
+      { new: true }
+    )
+    .populate('eventsFav')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function deleteFavEventById (req, res) {
   UserModel
-    .find()
+    .findByIdAndUpdate(res.locals.user._id,
+      { $pull: { eventsFav: req.params.eventId } },
+      { new: true }
+    )
+    .populate('eventsFav')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
