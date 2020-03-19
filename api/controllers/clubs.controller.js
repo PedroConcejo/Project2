@@ -5,11 +5,13 @@ const { handleError } = require('../utils')
 module.exports = {
   getAllClubs,
   createClub,
+  updateCLub,
   getClub,
   deleteClub,
   getClubEvent,
   createClubEvent,
-  deleteClubEvent
+  deleteClubEvent,
+  updateClubEvent
 }
 
 function getAllClubs (req, res) {
@@ -22,6 +24,16 @@ function getAllClubs (req, res) {
 function createClub (req, res) {
   ClubsModel
     .create({ ...req.body, owner: res.locals.user._id })
+    .then(response => res.json(response))
+    .catch((err) => handleError(err, res))
+}
+
+function updateCLub (req, res) {
+  ClubsModel
+    .findByIdAndUpdate(req.params.clubId, req.body, {
+      new: true,
+      runValidators: true
+    })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
@@ -57,6 +69,16 @@ function createClubEvent (req, res) {
 function deleteClubEvent (req, res) {
   EventsModel
     .findByIdAndDelete(req.params.eventId)
+    .then(response => res.json(response))
+    .catch((err) => handleError(err, res))
+}
+
+function updateClubEvent (req, res) {
+  EventsModel
+    .findByIdAndUpdate(req.params.eventId, req.body, {
+      new: true,
+      runValidators: true
+    })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
