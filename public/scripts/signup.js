@@ -17,6 +17,7 @@ document.getElementById('btn-signup').addEventListener('click', (event) => {
   api
     .post('auth/signup', newUser)
     .then(function (response) {
+      localStorage.clear()
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('name', response.data.name)
       localStorage.setItem('email', response.data.email)

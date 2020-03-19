@@ -5,20 +5,20 @@ const api = axios.create({
 })
 
 document.getElementById('btn-login').addEventListener('click', (event) => {
-  console.log('click')
   const newUser = {
-    user_email: document.getElementById('login_email').value,
-    user_password: document.getElementById('login_password').value
+    email: document.getElementById('login_email').value,
+    password: document.getElementById('login_password').value
   }
-  console.log('info')
   api
     .post('auth/login', newUser)
     .then(function (response) {
       if (response.data.error) {
         alert('WRONG PASSWORD')
       } else {
+        localStorage.clear()
         localStorage.setItem('token', response.data.token)
         localStorage.setItem('email', response.data.email)
+        localStorage.setItem('name', response.data.name)
         location.assign('clubs.html')
       }
     })
