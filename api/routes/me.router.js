@@ -9,7 +9,7 @@ const {
   getFavEvents,
   addFavEvent,
   deleteFavEventById
-} = require('../controllers/users.controller')
+} = require('../controllers/me.controller')
 
 // User Account Router
 router.put('/', updateMe)
