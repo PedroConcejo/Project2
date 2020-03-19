@@ -5,6 +5,10 @@ const eventsSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  description: {
+    type: String,
+    required: true
+  },
   club: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'clubs'
