@@ -10,7 +10,7 @@ document.getElementById('btn-logout').addEventListener('click', (event) => {
 })
 
 document.getElementById('btn-update').addEventListener('click', (event) => {
-  const updateUser = {
+  const updateMe = {
     name: document.getElementById('user_name').value,
     password: document.getElementById('user_password').value,
     gender: document.getElementById('user_gender').value,
@@ -19,7 +19,7 @@ document.getElementById('btn-update').addEventListener('click', (event) => {
   }
 
   api
-    .post('auth/signup', updateUser)
+    .put('me', updateMe)
     .then(function (response) {
       localStorage.clear()
       localStorage.setItem('token', response.data.token)
