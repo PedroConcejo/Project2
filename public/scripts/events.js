@@ -40,8 +40,7 @@ api
       <p class="card-text collapse" id="collapseContent">${event.address + ' ' + event.description}</p>
       <!-- Button -->
       <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Read more</a>
-      <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
-      <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+      <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it" id="like" value="${event._id}"></i>
 
     </div>
 
@@ -57,3 +56,14 @@ document.getElementById('btn-logout').addEventListener('click', (event) => {
   localStorage.clear()
   location.assign('login.html')
 })
+
+/*document.getElementById('like').addEventListener('click', (event) => {
+  const newFavEvent = {
+    eventsFav: document.getElementById('like').value
+  api
+    .put('me', newFavEvent)
+    .then(function (response) {}
+    .catch(function (error) {
+      console.log(error.response)
+    })
+})*/
