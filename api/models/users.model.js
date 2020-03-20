@@ -16,8 +16,7 @@ const userSchema = new mongoose.Schema({
     unique: [true, 'This is email is registered']
   },
   password: {
-    type: String,
-    required: true
+    type: String
   },
   gender: {
     type: String,

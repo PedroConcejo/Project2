@@ -19,13 +19,15 @@ document.getElementById('btn-update').addEventListener('click', (event) => {
   }
 
   api
-    .put('me', updateMe)
+    .put('me', updateMe, { headers: { token: localStorage.getItem('token') } })
     .then(function (response) {
-      localStorage.clear()
-      localStorage.setItem('token', response.data.token)
-      localStorage.setItem('name', response.data.name)
-      localStorage.setItem('email', response.data.email)
-      location.assign('clubs.html')
+      alert(`Profile Complete
+      Thank You!!!`)
+      // localStorage.clear()
+      // localStorage.setItem('token', response.data.token)
+      // localStorage.setItem('name', response.data.name)
+      // localStorage.setItem('email', response.data.email)
+      // location.assign('clubs.html')
     })
     .catch(function (error) {
       console.log(error.response)

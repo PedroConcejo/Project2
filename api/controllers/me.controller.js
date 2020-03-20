@@ -19,9 +19,18 @@ function updateMe (req, res) {
   UserModel
     .findByIdAndUpdate(res.locals.user._id, req.body, {
       new: true,
+      select: 'name email',
       runValidators: true
     })
-    .then(response => res.json(response))
+    .then(response => {
+      var result = {
+        token: '',
+        name: '',
+        email: ''
+      }
+      res.json(response)
+    })
+
     .catch((err) => handleError(err, res))
 }
 

@@ -28,6 +28,7 @@
             <a class="nav-link text-warning" href="events.html">Events <span class="sr-only">(current)</span></a>
           </li>
         </ul>
+
         <ul class="navbar-nav navbar-right">
           <li class="nav-item">
             <a class="nav-link text-warning" href="#">
@@ -48,66 +49,71 @@
         </ul>
       </div>
     </nav>
-    </div>
+  </div>
 
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Clubs</li>
-      </ol>
-    </nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Clubs</li>
+    </ol>
+  </nav>
 
   <div class="container">
-  
     <div class="row">
       <div class="col-6 offset-3 mt-5">
-        <div class=" row justify-content-around"><button type="button" class="btn btn-secondary btn-lg" disabled>Choose Picture</button>
+        <div class=" row justify-content-around">
+          <button type="button" class="btn btn-secondary btn-lg" disabled>Choose Picture</button>
         </div>
+
         <form class="p-3 mb-2 bg-white text-dark">
           <p class="h1">Update Account</p>
-              <label for="inputusername">Username</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="user_name">
-              </div>
+
+          <label for="inputusername">Username</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="user_name">
+          </div>
               
-                <label for="inputemail">Password</label>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="password">
-                </div>
-                <label for="inputPassword">New Password</label>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" id="user_password">
-                </div>
-                <label for="inputgender">Gender</label>
-                <div class="col-sm-10">
-                  <select class="custom-select" id="user_gender">
-                    <option value="male" selected>Male</option>
-                    <option value="female">Female</option>
-                  </select>
-                </div>
-                <label for="inputbirthday">Birthday</label>
-                <div class="col-sm-10">
-                  <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="" id="user_birthday">
-                </div>
-                <label for="inputphone">Phone Number</label>
-                <div class="col-sm-10">
-                  <input type="tel" id="user_phone" name="phone" pattern="[0-9]{9}">
-                  
-                </div>
-                   <div class="p-5 row justify-content-around"><button type="submit" class="btn btn-success" id="btn-update">UPDATE ACCOUNT</button>
-                  </div>
+          <label for="inputemail">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password">
+          </div>
+
+          <label for="inputPassword">New Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="user_password">
+          </div>
+
+          <label for="inputgender">Gender</label>
+          <div class="col-sm-10">
+            <select class="custom-select" id="user_gender">
+              <option value="male" selected>Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <label for="inputbirthday">Birthday</label>
+          <div class="col-sm-10">
+            <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="" id="user_birthday">
+          </div>
+
+          <label for="inputphone">Phone Number</label>
+          <div class="col-sm-10">
+            <input type="tel" id="user_phone" name="phone" pattern="[0-9]{9}">
+          </div>
+
+          <div class="p-5 row justify-content-around">
+            <a class="btn btn-success" id="btn-update">UPDATE ACCOUNT</a>
+          </div>
         </form>
-       
       </div>
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  
   <script src="scripts/index.js"></script>
-  <script src="scripts/auth.js"></script>
   <script src="scripts/profile.js"></script>
 </body>
 </html>

@@ -8,9 +8,7 @@ api
   .get('clubs', { headers: { token: localStorage.getItem('token') } })
   .then(clubs => {
     // console.log(clubs.data[2])
-    clubs.data.forEach(club => {
-      console.log(club)
-
+    clubs.data.forEach((club, idx) => {
       var div = document.createElement('div')
       div.className = 'card col-3 m-1'
       // var i = 0
@@ -37,9 +35,9 @@ api
     <div class="collapse-content">
 
       <!-- Text -->
-      <p class="card-text collapse" id="collapseContent">${club.address + ' ' + club.description}</p>
+      <p class="card-text collapse" id="collapseContent${idx}">${club.address + ' ' + club.description}</p>
       <!-- Button -->
-      <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+      <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent${idx}" aria-expanded="false" aria-controls="collapseContent${idx}">Read more</a>
       <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
       <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
 
