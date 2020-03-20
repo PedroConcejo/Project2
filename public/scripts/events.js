@@ -5,19 +5,19 @@ const api = axios.create({
 })
 
 api
-  .get('clubs', { headers: { token: localStorage.getItem('token') } })
-  .then(clubs => {
+  .get('events', { headers: { token: localStorage.getItem('token') } })
+  .then(events => {
     // console.log(clubs.data[2])
-    clubs.data.forEach(club => {
-      console.log(club)
+    events.data.forEach(event => {
+      console.log(event)
 
       var div = document.createElement('div')
       div.className = 'card col-3 m-1'
       // var i = 0
-      var htmlClub =
-      `<h4 class="card-title font-weight-bold mb-2">${club.name}</h4>
+      var htmlEvent =
+      `<h4 class="card-title font-weight-bold mb-2">${event.name}</h4>
       <!-- Subtitle -->
-      <p class="card-text"><i class="far fa-clock pr-2"></i>${club.schedule}</p>
+      <p class="card-text"><i class="far fa-clock pr-2"></i>${event.date}</p>
 
     </div>
 
@@ -25,7 +25,7 @@ api
 
   <!-- Card image -->
   <div class="view overlay">
-    <img class="card-img-top rounded-0" src="img/${club.photoUrl}" alt="Card image cap">
+    <img class="card-img-top rounded-0" src="img/${event.photoUrl}" alt="Card image cap">
     <a href="#!">
       <div class="mask rgba-white-slight"></div>
     </a>
@@ -37,7 +37,7 @@ api
     <div class="collapse-content">
 
       <!-- Text -->
-      <p class="card-text collapse" id="collapseContent">${club.address + ' ' + club.description}</p>
+      <p class="card-text collapse" id="collapseContent">${event.address + ' ' + event.description}</p>
       <!-- Button -->
       <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Read more</a>
       <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
@@ -48,8 +48,8 @@ api
   </div>
 
 </div>`
-      div.innerHTML = htmlClub
-      document.getElementById('clubList').appendChild(div)
+      div.innerHTML = htmlEvent
+      document.getElementById('eventList').appendChild(div)
     })
   })
 

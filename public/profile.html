@@ -10,28 +10,54 @@
   <link rel="stylesheet" href="styles/auth.css">
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark row">
-  <div class="col">
-    <a class="navbar-brand text-warning" href="#"><img src="img/logop3.png" class="rounded" alt="Cinque Terre"></a>
-    <a class="navbar-brand text-warning" href="#"><img src="img/firetitulo.png" class="rounded" alt="Cinque Terre"></a>
-  </div>
-  <div class="col align-self-center">
-    <a class="navbar-brand text-warning" href="#">Clubs</a>
-    <a class="navbar-brand text-warning" href="#">Events</a>
-  </div>
-  <div>
-    <a class="navbar-brand text-warning" href="#">Fav</a>
-    <a class="navbar-brand text-warning" href="#">Mail</a>
-    <a class="navbar-brand text-warning" href="#">Profile</a>
-    <a class="navbar-brand text-warning" href="#">Logout</a>
-  </div>
-</nav>
-<nav class="navbar navbar-secondary bg-secondary">
-  <span class="navbar-brand mb-0 h1">Clubs / Profile</span>
-</nav>
+  <div class="container-fluid px-0 mx-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Cinque Terre"></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-warning" href="clubs.html">Clubs <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="events.html">Events <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="#">
+              <i class="far fa-heart"></i>
+              Fav <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="profile.html">Profile<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link text-warning" href="#" id="btn-logout">
+              Logout<span class="sr-only">(current)</span>
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Clubs</li>
+      </ol>
+    </nav>
 
   <div class="container">
-  <img src="img/Capturafer.PNG" class="rounded" alt="Cinque Terre">
+  
     <div class="row">
       <div class="col-6 offset-3 mt-5">
         <div class=" row justify-content-around"><button type="button" class="btn btn-secondary btn-lg" disabled>Choose Picture</button>
@@ -40,35 +66,34 @@
           <p class="h1">Update Account</p>
               <label for="inputusername">Username</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputusername">
+                <input type="text" class="form-control" id="user_name">
               </div>
               
                 <label for="inputemail">Password</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputemail">
+                  <input type="email" class="form-control" id="password">
                 </div>
                 <label for="inputPassword">New Password</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword">
+                  <input type="password" class="form-control" id="user_password">
                 </div>
                 <label for="inputgender">Gender</label>
                 <div class="col-sm-10">
-                  <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Male</option>
-                    <option value="1">Female</option>
-                    
-                                   </select>
+                  <select class="custom-select" id="user_gender">
+                    <option value="male" selected>Male</option>
+                    <option value="female">Female</option>
+                  </select>
                 </div>
                 <label for="inputbirthday">Birthday</label>
                 <div class="col-sm-10">
-                  <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="">
+                  <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="" id="user_birthday">
                 </div>
                 <label for="inputphone">Phone Number</label>
                 <div class="col-sm-10">
-                  <input type="tel" id="phone" name="phone" pattern="[0-9]{9}">
+                  <input type="tel" id="user_phone" name="phone" pattern="[0-9]{9}">
                   
                 </div>
-                   <div class="p-5 row justify-content-around"><button type="submit" class="btn btn-success">UPDATE ACCOUNT</button>
+                   <div class="p-5 row justify-content-around"><button type="submit" class="btn btn-success" id="btn-update">UPDATE ACCOUNT</button>
                   </div>
         </form>
        
@@ -83,5 +108,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <script src="scripts/index.js"></script>
   <script src="scripts/auth.js"></script>
+  <script src="scripts/profile.js"></script>
 </body>
 </html>
